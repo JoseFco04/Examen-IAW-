@@ -23,7 +23,7 @@ openssl req \
   -subj "/C=$OPENSSL_COUNTRY/ST=$OPENSSL_PROVINCE/L=$OPENSSL_LOCALITY/O=$OPENSSL_ORGANIZATION/OU=$OPENSSL_ORGUNIT/CN=$OPENSSL_COMMON_NAME/emailAddress=$OPENSSL_EMAIL"
 
   # Copiamos el archivo de configuración de apache para https
-  cp ../conf/default-ssl.conf /etc/apache2/sites-available/
+  cp ../config/default-ssl.conf /etc/apache2/sites-available/
 
   # Habilitamos el VirtualHost para HTTPS 
   a2ensite default-ssl.conf
@@ -33,7 +33,7 @@ openssl req \
 
   #Configuramos que las peticiones a HTTP se redirijan a HTTPS
   # Copiamos el archivo de configuracion de VirtualHost para HTTP
-  cp ../conf/000-default.conf /etc/apache2/sites-available
+  cp ../config/000-default.conf /etc/apache2/sites-available
 
   # Sustituimos el nombre del dominio
   sed -i "s/PUT_YOUR_DOMAIN_HERE/$OPENSSL_COMMON_NAME/g" /etc/apache2/sites-available/default-ssl.conf

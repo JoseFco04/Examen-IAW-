@@ -13,7 +13,7 @@ apt update
 apt install apache2 -y
 
 # Instalamos php con sus paquetes y extensiones
-apt install php php-mysql libapache2-mod-php php-xml php-mbstring php-curl php-zip php-gd php-intl php-soap
+apt install php php-mysql libapache2-mod-php php-xml php-mbstring php-curl php-zip php-gd php-intl php-soap -y
 
 # Copiamos el archivo conf de apache 
 cp ../config/000-default.conf /etc/apache2/sites-available
