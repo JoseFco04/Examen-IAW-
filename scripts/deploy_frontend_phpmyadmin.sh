@@ -53,3 +53,8 @@ mkdir -p /var/www/html/phpmyadmin/tmp/
 
 # Actualizamos los permisos del directorio /var/www/html
 chown -R www-data:www-data /var/www/html
+
+# Eliminamos si existe alguna base de datos previa de phpMyadmin
+mysql -u root <<< "DROP DATABASE IF EXISTS $PMA_DB"
+# Importamos el script de la base de datos de phpMyAdmin
+mysql -u root < /var/www/html/phpmyadmin/sql/create_tables.sql

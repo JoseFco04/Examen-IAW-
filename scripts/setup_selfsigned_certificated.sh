@@ -34,7 +34,7 @@ openssl req \
   #Configuramos que las peticiones a HTTP se redirijan a HTTPS
   # Copiamos el archivo de configuracion de VirtualHost para HTTP
   cp ../config/000-default.conf /etc/apache2/sites-available
-
+  
   # Sustituimos el nombre del dominio
   sed -i "s/PUT_YOUR_DOMAIN_HERE/$OPENSSL_COMMON_NAME/g" /etc/apache2/sites-available/default-ssl.conf
   # Habilitamos el módulo 
