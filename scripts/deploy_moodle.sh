@@ -52,8 +52,6 @@ sudo mkdir /var/www/moodledata
 # Le damos permisos de lectura y escitura 
 chmod 077 /var/www/moodledata
 
-# Borramos instalaciones previas 
-rm -rf /var/www/html/moodle-4.3.1/install.php
 # Instalamos moodle con cli
 sudo -u www-data php /var/www/html/admin/cli/install.php \
     --lang=$MOODLE_LANG \
@@ -67,9 +65,9 @@ sudo -u www-data php /var/www/html/admin/cli/install.php \
     --fullname=$MOODLE_FULLNAME \
     --shortname=$MOODLE_SHORTNAME \
     --summary=$MOODLE_SUMMARY \
-    -adminuser=$MOOLE_ADMIN_USER \
+    --adminuser=$MOOLE_ADMIN_USER \
     --adminpass=$MOODLE_ADMIN_PASS \
-    -adminemail=$MOODLE_ADMIN_EMAIL \
+    --adminemail=$MOODLE_ADMIN_EMAIL \
     --non-interactive \
     --agree-license
 
