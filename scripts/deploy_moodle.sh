@@ -37,9 +37,6 @@ a2enmod rewrite
 # Reiniciamos el servicio de apache
 systemctl restart apache2
 
-# Copiamos el nuevo archivo .htaccess
-cp ../htaccess/.htaccess /var/www/html
-
 # Cambiamos la información de los directorios para que todos puedan escribir
 chown -R www-data:www-data /var/www/html
 
