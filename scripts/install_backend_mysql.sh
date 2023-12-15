@@ -28,4 +28,8 @@ mysql -u root <<< "DROP USER IF EXISTS $MOODLE_DB_USER@'$IP_CLIENTE_MYSQL'"
 mysql -u root <<< "CREATE USER $MOODLE_DB_USER@'$IP_CLIENTE_MYSQL' IDENTIFIED BY '$MOODLE_DB_PASS'"
 mysql -u root <<< "GRANT ALL PRIVILEGES ON $MOODLE_DB_NAME.* TO $MOODLE_DB_USER@'$IP_CLIENTE_MYSQL'"
 
+# Creamos un usuario que tengo acceso a todas las bases de datos 
+mysql -u root <<< "DROP USER IF EXISTS '$APP_USER'@'%'"
+mysql -u root <<< "CREATE USER '$APP_USER'@'%' IDENTIFIED BY '$APP_PASSWORD';"
+mysql -u root <<< "GRANT ALL PRIVILEGES ON *.* TO '$APP_USER'@'%';"
 
